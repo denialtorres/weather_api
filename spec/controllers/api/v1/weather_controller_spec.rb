@@ -4,7 +4,7 @@ RSpec.describe Api::V1::WeatherController, type: :controller do
   describe 'GET #fetch_weather' do
     let(:valid_params) { { query: 'mon' } }
 
-    context 'when the request is valid', :vcr do
+    context 'when the request is valid', vcr: { cassette_name: 'returns_a_successful_response_with_weather_data' } do
       it 'returns a successful response with weather data' do
         get :fetch_weather, params: valid_params
 
