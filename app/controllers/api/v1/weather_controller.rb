@@ -2,7 +2,7 @@ module Api
   module V1
     class WeatherController < ApplicationController
       def fetch_weather
-        payload = FetchWeatherOrganizer.call(params: params)
+        payload = FetchWeatherOrganizer.call(query: params[:query])
 
         if payload.success?
           render json: { success: true, data: payload.weather_cities }, status: :ok
