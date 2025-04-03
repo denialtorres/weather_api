@@ -372,6 +372,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  dotenv
   httparty
   importmap-rails
   interactor (~> 3.0)

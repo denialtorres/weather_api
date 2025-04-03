@@ -68,3 +68,6 @@ gem 'httparty'
 
 # business logic
 gem 'interactor', '~> 3.0'
+
+# env variables
+gem 'dotenv'
