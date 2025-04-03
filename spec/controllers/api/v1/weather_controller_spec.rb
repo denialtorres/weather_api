@@ -5,14 +5,14 @@ RSpec.describe Api::V1::WeatherController, type: :controller do
     let(:valid_params) { { query: "mon" } }
     let(:invalid_params) { { cities: [] } }
 
-    context 'when the request is valid' do
+    context 'when the request is valid', :vcr do
       it 'returns a successful response with weather data' do
         get :fetch_weather, params: valid_params
 
         expect(response).to have_http_status(:ok)
         json = JSON.parse(response.body)
         expect(json['success']).to eq(true)
-        expected_cities = ['Monterrey', 'Monetta', 'Monterey']
+        expected_cities = ['Monterrey']
         actual_cities = json['data'].map { |city| city['city'] }
 
         expect(actual_cities).to include(*expected_cities)

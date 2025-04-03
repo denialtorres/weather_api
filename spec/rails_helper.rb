@@ -43,6 +43,11 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  VCR.configure do |config|
+     config.cassette_library_dir = 'spec/fixtures/vcr_cassettes/'
+     config.hook_into :webmock
+     config.configure_rspec_metadata!
+   end
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
