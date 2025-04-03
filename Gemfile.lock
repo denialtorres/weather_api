@@ -96,9 +96,11 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    coderay (1.1.3)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
+    csv (3.3.3)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -114,12 +116,17 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httparty (0.23.1)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
+    interactor (3.1.2)
     io-console (0.8.0)
     irb (1.15.1)
       pp (>= 0.6.0)
@@ -153,9 +160,12 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
     net-imap (0.5.6)
       date
       net-protocol
@@ -201,6 +211,9 @@ GEM
       activesupport (>= 7.0.0)
       rack
       railties (>= 7.0.0)
+    pry (0.15.2)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     psych (5.2.3)
       date
       stringio
@@ -268,20 +281,6 @@ GEM
     rubocop-ast (1.44.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
-    rubocop-performance (1.25.0)
-      lint_roller (~> 1.1)
-      rubocop (>= 1.75.0, < 2.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.31.0)
-      activesupport (>= 4.2.0)
-      lint_roller (~> 1.1)
-      rack (>= 1.1)
-      rubocop (>= 1.75.0, < 2.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails-omakase (1.1.0)
-      rubocop (>= 1.72)
-      rubocop-performance (>= 1.24)
-      rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     rubyzip (2.4.1)
     securerandom (0.4.1)
@@ -373,13 +372,16 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  httparty
   importmap-rails
+  interactor (~> 3.0)
   jbuilder
   kamal
   propshaft
+  pry
   puma (>= 5.0)
   rails (~> 8.0.2)
-  rubocop-rails-omakase
+  rubocop
   selenium-webdriver
   solid_cable
   solid_cache
