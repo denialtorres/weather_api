@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::WeatherController, type: :controller do
   describe 'GET #fetch_weather' do
-    let(:valid_params) { { query: "mon" } }
+    let(:valid_params) { { query: 'mon' } }
 
     context 'when the request is valid', :vcr do
       it 'returns a successful response with weather data' do
@@ -26,7 +26,8 @@ RSpec.describe Api::V1::WeatherController, type: :controller do
 
     context 'error handling' do
       before do
-        allow_any_instance_of(ReservamosClient).to receive(:search_places).and_raise(StandardError, "Custom error message")
+        allow_any_instance_of(ReservamosClient).to receive(:search_places).and_raise(StandardError,
+                                                                                     'Custom error message')
       end
 
       it 'returns an error response' do
