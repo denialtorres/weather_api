@@ -27,6 +27,6 @@ class FetchWeatherFromCitiesInteractor
   end
 
   def rate_limer(response)
-    response["code"] == 429001
+    response['code'] == 429_001
   end
 end

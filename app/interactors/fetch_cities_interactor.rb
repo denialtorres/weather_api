@@ -6,7 +6,8 @@ class FetchCitiesInteractor
 
     return context.fail!(error: response['error']) if response.is_a?(Hash) && response.key?('error')
 
-    context.cities = response.uniq { |city| city['city_name'] }.first(10).map do |city|
+    # only first city to save $$$ for rate limiter issues
+    context.cities = response.uniq { |city| city['city_name'] }.first(1).map do |city|
       { name: city['city_name'], lat: city['lat'], lon: city['long'] }
     end
   rescue StandardError => e
