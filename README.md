@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Docker
 
-Things you may want to cover:
+To mount the project
 
-* Ruby version
+inside the main foler:
 
-* System dependencies
+```
+docker-compose up --build
+```
 
-* Configuration
+To connect to the rails console
 
-* Database creation
+```
+docker-compose exec app rails c
+```
 
-* Database initialization
+Run the server
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+docker-compose exec app rails server -b 0.0.0.0
+```
