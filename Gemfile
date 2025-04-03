@@ -50,6 +50,8 @@ group :development, :test do
   gem 'rubocop', require: false
 
   gem 'pry'
+
+  gem 'rspec-rails', '~> 7.1'
 end
 
 group :development do
