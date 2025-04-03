@@ -74,6 +74,7 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
+          WEATHER_KEY: $WEATHER_KEY
           # REDIS_URL: redis://localhost:6379/0
         run: bundle exec rspec --format documentation
 
