@@ -3,7 +3,7 @@ require 'httparty'
 class WeatherClient
   include HTTParty
   base_uri 'https://api.tomorrow.io/v4'
-  API_KEY = ENV["WEATHER_KEY"]
+  API_KEY = ENV['WEATHER_KEY']
 
   def initialize(lat, lon)
     @lat = lat
